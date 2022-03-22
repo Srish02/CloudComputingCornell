@@ -1,0 +1,6 @@
+In order to compile the following code just need to click on "run" button on visual code. On main function 
+I have unit testing methods written which will be executed on main. Also have a file which is testing each function of the 
+server while parsing the input from the file. 
+
+main files are: DHT_server and Main.java
+

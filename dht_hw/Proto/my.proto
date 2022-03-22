@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.routeguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+service ShoppingCartService {
+
+    rpc GetCart (CartRequest) returns (Cart) { }
+    rpc AddItem (AddItemRequest) returns (Empty) { }
+    rpc DeleteItem (DeleteItemRequest) return (Empty) { }
+}
+
+message CartRequest {
+    string userId = 1;
+}
+
+message AddItemRequest {
+    string userId = 1;
+    ProductItem prod = 2;
+}
+
+message ProductItem {
+    string productId = 1;
+    string name = 2;
+    int32 quantity = 3;
+}
+
+message Cart {
+    repeated ProductItem products = 1;
+}
+
+message DeleteItemRequest {
+    string userId = 1;
+    sstring productId = 2;
+}
+
+message Empty {}
